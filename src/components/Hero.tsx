@@ -12,7 +12,7 @@ export default function Hero() {
 
       {/* Foto de fondo completa */}
       <img
-        src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1600&q=85"
+        src="/hero-bg.jpg"
         alt="Veterinaria atendiendo a una mascota"
         className="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
