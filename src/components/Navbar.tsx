@@ -28,7 +28,7 @@ export default function Navbar() {
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 font-head font-800 text-xl text-teal">
+        <a href="#" className={`flex items-center gap-2 font-head font-800 text-xl transition-colors ${scrolled ? 'text-teal' : 'text-white'}`}>
           <PawPrint size={26} className="text-orange" />
           <span style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800 }}>
             PetCare
@@ -39,7 +39,7 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-8">
           {links.map(l => (
             <button key={l.href} onClick={() => scrollTo(l.href)}
-              className="text-sm font-medium text-gray-600 hover:text-teal transition-colors cursor-pointer bg-transparent border-none">
+              className={`text-sm font-medium transition-colors cursor-pointer bg-transparent border-none ${scrolled ? 'text-gray-600 hover:text-teal' : 'text-white hover:text-teal-l'}`}>
               {l.label}
             </button>
           ))}
