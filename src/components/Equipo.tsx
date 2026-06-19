@@ -1,9 +1,24 @@
 import { useEffect, useRef, useState } from 'react'
 
 const equipo = [
-  { nombre: 'Dra. Valentina Rojas', especialidad: 'Medicina Interna & Cirugía', exp: '12 años de experiencia', emoji: '👩‍⚕️' },
-  { nombre: 'Dr. Sebastián Mora',   especialidad: 'Dermatología Veterinaria',   exp: '8 años de experiencia',  emoji: '👨‍⚕️' },
-  { nombre: 'Dra. Camila Torres',   especialidad: 'Medicina Preventiva',        exp: '6 años de experiencia',  emoji: '👩‍⚕️' },
+  {
+    nombre: 'Dra. Valentina Rojas',
+    especialidad: 'Medicina Interna & Cirugía',
+    exp: '12 años de experiencia',
+    foto: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    nombre: 'Dr. Sebastián Mora',
+    especialidad: 'Dermatología Veterinaria',
+    exp: '8 años de experiencia',
+    foto: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80',
+  },
+  {
+    nombre: 'Dra. Camila Torres',
+    especialidad: 'Medicina Preventiva',
+    exp: '6 años de experiencia',
+    foto: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=600&q=80',
+  },
 ]
 
 export default function Equipo() {
@@ -38,9 +53,14 @@ export default function Equipo() {
                 transform: visible ? 'translateY(0)' : 'translateY(28px)',
                 transition: `opacity 0.5s ease ${i * 120}ms, transform 0.5s ease ${i * 120}ms`,
               }}>
-              {/* Avatar */}
-              <div className="bg-gradient-to-br from-teal/20 to-teal/5 h-52 flex items-center justify-center">
-                <div className="text-8xl">{v.emoji}</div>
+              {/* Foto */}
+              <div className="h-64 overflow-hidden">
+                <img
+                  src={v.foto}
+                  alt={v.nombre}
+                  className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                />
               </div>
               <div className="p-6">
                 <h3 className="font-800 text-lg text-gray-900 mb-1" style={{ fontFamily: 'Nunito, sans-serif', fontWeight: 800 }}>{v.nombre}</h3>
